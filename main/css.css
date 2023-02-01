@@ -4,7 +4,7 @@ body {
 
 header {
     
-    background-color: rgb(156, 155, 155);
+    background-color: black;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -18,12 +18,13 @@ header {
 main {
     height: 66vh;
     width: 100%;
-    background-color: rgb(0, 129, 167)
+    background-color: rgb(0, 129, 167);
+    
 }
 
 footer {
     
-    background-color: rgb(156, 155, 155);
+    background-color: black;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -33,6 +34,59 @@ footer {
     border-radius: 5px;
 
 }
+
+h1 {
+    display: inline;
+    position: relative;
+}
+
+h2 {
+    margin: 0 auto;
+}
+
+#Arr1 {
+    top: 150px;
+    left: 250px;
+}
+
+#Arr2 {
+    top: 440px;
+    left: 1500px;
+    
+}
+
+#p1Top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#p2Top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#p1Bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#p2Bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .corners {
 
@@ -68,4 +122,53 @@ footer {
     height: 15vh;
     border: 3px solid rgb(236, 159, 5);
 
+}
+
+.tile {
+    width: 7vw;
+    height: 10vh;
+    border: 5px solid black;
+}
+
+#topDiv {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+#bottomDiv {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+}
+
+#midDiv {
+    display: flex;
+}
+
+#rightMid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 86px;
+    width: 50%;
+    
+}
+
+#leftMid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    margin-left: 86px;
+}
+
+img {
+    width: 1;
+}
+
+p {
+    margin: 0;
 }
