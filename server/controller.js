@@ -2,11 +2,8 @@
 let p1Name = ''
 let p2Name = ''
 
-let p1Cards = []
-let p2Cards = []
 
-let p1Properties = []
-let p2Properties = []
+let randomEvents = ['G3', 'G1', 'S50', 'S2', 'L50', 'L1']
 
 
 
@@ -20,6 +17,15 @@ module.exports = {
         p2Name = req.body.name2
 
         res.status(200).send({name1: p1Name, name2: p2Name})
-    }
+    },
+
+    randEvent: (req, res) => {
+
+        let event = randomEvents[Math.floor(Math.random() * 6)]
+
+        res.status(200).send(event)
+
+    },
+
     
 }

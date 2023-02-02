@@ -33,82 +33,68 @@
 
 <main>
     
-    <p> Red Tiles (Lose $350) ----- Purple Tiles (Property tile) ----- Green Tiles (Gain $250) ----- Yellow Tiles (Draw a card)
-        -------------------- Don't go below $1 --- Get $2000 to win the Game!
-    </p>
+    <div id="legendDiv">
+    <p>Red Tiles (Lose $350)</p>
+    <p>Purple Tiles (Property tile)</p>
+    <p>Green Tiles (Gain $250)</p>
+    <p>Yellow Tiles (Random event space)</p>
+    <p>Be the first with $2000!</p>
+    </div>
     
     
 
-    <div id="topDiv">
+<div class="board">
 
-        <div id="1" class="tile">Start <div id="p1"> P1 </div> <div id="p2"> P2 </div></div>
-        <div id="2" class="tile"></div>
+        <div id="1" class="tile empty">Start <div id="p1"> P1 </div> <div id="p2"> P2 </div></div>
+        <div id="2" class="tile empty"></div>
         <div id="3" class="tile green"></div>
         <div id="4" class="tile red"></div>
-        <div id="5" class="tile"></div>
+        <div id="5" class="tile empty"></div>
         <div id="6" class="tile yellow"></div>
-        <div id="7" class="tile"></div>
-        <div id="8" class="tile"></div>
+        <div id="7" class="tile empty"></div>
+        <div id="8" class="tile empty"></div>
         <div id="9" class="tile purp">Wacky Walkway</div>
-        <div id="10" class="tile"></div>
+        <div id="10" class="tile empty"></div>
         <div id="11" class="tile green"></div>
-        <div id="12" class="tile"></div>
-
-
-    </div>
+        <div id="12" class="tile empty"></div>
 
 
 
-    <div id="midDiv">
-
-        <section id="leftMid">
-
-            <div id="28" class="tile yellow"></div>
-            <div id="29" class="tile red"></div>
-            <div id="30" class="tile"></div>
-
-        </section>
 
 
-        <section id="rightMid">
-
-            <div id="13" class="tile yellow"></div>
-            <div id="14" class="tile"></div>
-            <div id="15" class="tile purp">Silly Street</div>
-
-        </section>
-
-    </div>
+        <div id="30" class="tile yellow"></div>
+        <div class="emptySpace"></div>
+        <div id="13" class="tile red"></div>
+        <div id="29" class="tile red"></div>
+        <div class="emptySpace"></div>
+        <div id="14" class="tile yellow"></div>
+        <div id="28" class="tile empty"></div>
+        <div class="emptySpace"></div>
+        <div id="15" class="tile purp">Silly Street</div>
 
 
 
-    <div id="bottomDiv">
 
         <div id="27" class="tile purp">Funky Park</div>
-        <div id="26" class="tile"></div>
+        <div id="26" class="tile empty"></div>
         <div id="25" class="tile green"></div>
-        <div id="24" class="tile"></div>
+        <div id="24" class="tile yellow"></div>
         <div id="23" class="tile green"></div>
         <div id="22" class="tile purp">Bouncy Boulevard</div>
-        <div id="21" class="tile"></div>
+        <div id="21" class="tile empty"></div>
         <div id="20" class="tile red"></div>
-        <div id="19" class="tile"></div>
+        <div id="19" class="tile empty"></div>
         <div id="18" class="tile yellow"></div>
-        <div id="17" class="tile"></div>
+        <div id="17" class="tile empty"></div>
         <div id="16" class="tile green"></div>
-
-    </div>
+</div>
 
 </main>
 
 <footer>
     <aside id="p1Bottom" class="corners">
-        <h2>Cards in hand:
-            <div id="p1Cards">
-            
-            </div></h2>
-            <h2>-----------------------------------</h2>
-            <h2>Properties Owned:<div id="p1Props">
+        
+            <h2 id="p1H2">Properties Owned:<div id="p1Props">
                 
             </div></h2>
     </aside>
@@ -116,19 +102,19 @@
 
     <div id="dieDiv" class="mid">
         <section><h1 id="actions"></h1></section>
-       <div id="dieResultDiv"> <img id="dieImg" src="../die.png"> <h3 id="dieResult"></h3> </div>
+        <div id="dieResultDiv">
+         <img id="dieImg" src="../die.png"> <h3 id="dieResult"></h3>
+        </div>
         <button id="dieBtn" class="btn">Roll</button>
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
     </div>
 
 
 
     <aside id="p2Bottom" class="corners">
-        <h2>Cards in hand:
-        <div id="p2Cards">
         
-        </div></h2>
-        <h2>-----------------------------------</h2>
-        <h2>Properties Owned:<div id="p2Props">
+        <h2 id="p2H2">Properties Owned:<div id="p2Props">
 
         </div></h2>
     </aside>

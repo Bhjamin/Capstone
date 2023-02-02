@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body { 
     background-color: black;
 }
@@ -20,6 +24,9 @@ main {
     width: 100%;
     background-color: rgb(0, 129, 167);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
@@ -143,13 +150,25 @@ h2 {
 }
 
 .tile {
-    width: 7vw;
-    height: 10vh;
+    height: 6vw;
     border: 5px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(12, 6vw);
+    grid-template-rows: repeat(5, 6vw);
+    margin: 0 auto;
+    max-width: 84vw;
+}
+
+.emptySpace {
+    grid-column-start: 2;
+    grid-column-end: 12;
 }
 
 #topDiv {
@@ -190,6 +209,8 @@ h2 {
 p {
     display: inline;
     font-size: 20px;
+    max-width: 250px;
+    text-align: center;
 }
 
 .btn {
@@ -216,66 +237,26 @@ img {
     
 }
 
+.spin {
+    animation: spin 1s linear infinite;
+}
 
-@media all and (max-width: 1800px) {
-    #rightMid {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin-right: 75px;
-        width: 50%;
-        
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
     }
-    
-    #leftMid {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 50%;
-        margin-left: 75px;}
+    to {
+        transform: rotate(360deg);
     }
-    
-    @media all and (max-width: 1600px) {
-        #rightMid {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-right: 60px;
-            width: 50%;
-            
-        }
-        
-        #leftMid {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 50%;
-            margin-left: 60px;}
-    }
+}
 
-    @media all and (max-width: 1400px) {
-        #rightMid {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-right: 44px;
-            width: 50%;
-            
-        }
-        
-        #leftMid {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 50%;
-            margin-left: 44px;}
-
-        h2 {
-            font-size: 15px;
-        }
-    }
-    
-    
+#legendDiv {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+     
 #dieDiv {
     display: flex;
     flex-direction: column;
@@ -285,6 +266,8 @@ img {
 #dieResultDiv {
     display: flex;
 }
+
+
 
 input {
     margin: 5px;
@@ -319,4 +302,28 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.G1 {
+    margin: 3px;
+    border: 2px solid green;
+}
+
+.G3 {
+    margin: 3px;
+    border: 2px solid green;
+}
+
+.S50 {
+    margin: 3px;
+    border: 2px solid red;
+}
+
+.S2 {
+    margin: 3px;
+    border: 2px solid red;
+}
+
+.empty {
+    background-color: rgb(27, 115, 141);
 }
