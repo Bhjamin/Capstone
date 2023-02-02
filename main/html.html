@@ -11,22 +11,23 @@
     
 <header>
     <section id="p1Top" class="corners">
-        <h2>Player 1</h2>
-        <h2>Name: </h2>
-        <h2>Money: </h2>
+        
+        <h2 id="p1Money">Money: </h2>
     </section>
 
 
     <div id="turnDiv" class="mid">
         <button id="startBtn" class="btn">Start</button>
         <h3 id="turnText">press start</h3>
+        <input id="p1NameInput" placeholder="Player 1 Name">
+        <input id="p2NameInput" placeholder="Player 2 Name">
+        <button id="nameSubmitBtn" class="btn">Submit</button>
     </div>
 
 
     <section id="p2Top" class="corners">
-        <h2>Player 2</h2>
-        <h2>Name: </h2>
-        <h2>Money: </h2>
+        
+        <h2 id="p2Money">Money: </h2>
     </section>
 </header>
 
@@ -36,13 +37,11 @@
         -------------------- Don't go below $1 --- Get $2000 to win the Game!
     </p>
     
-    <h1 id="Arr1"> ===> </h1>
-    <h1 id="Arr2"> <=== </h1>
     
 
     <div id="topDiv">
 
-        <div id="1" class="tile">Start</div>
+        <div id="1" class="tile">Start <div id="p1"> P1 </div> <div id="p2"> P2 </div></div>
         <div id="2" class="tile"></div>
         <div id="3" class="tile green"></div>
         <div id="4" class="tile red"></div>
@@ -89,7 +88,7 @@
         <div id="26" class="tile"></div>
         <div id="25" class="tile green"></div>
         <div id="24" class="tile"></div>
-        <div id="23" class="tile"></div>
+        <div id="23" class="tile green"></div>
         <div id="22" class="tile purp">Bouncy Boulevard</div>
         <div id="21" class="tile"></div>
         <div id="20" class="tile red"></div>
@@ -108,7 +107,7 @@
             <div id="p1Cards">
             
             </div></h2>
-            <h2>----------------------------------------</h2>
+            <h2>-----------------------------------</h2>
             <h2>Properties Owned:<div id="p1Props">
                 
             </div></h2>
@@ -116,8 +115,9 @@
 
 
     <div id="dieDiv" class="mid">
-        <section id="actions"></section>
-        <img src="../die.png">
+        <section><h1 id="actions"></h1></section>
+       <div id="dieResultDiv"> <img id="dieImg" src="../die.png"> <h3 id="dieResult"></h3> </div>
+        <button id="dieBtn" class="btn">Roll</button>
     </div>
 
 
@@ -127,7 +127,7 @@
         <div id="p2Cards">
         
         </div></h2>
-        <h2>----------------------------------------</h2>
+        <h2>-----------------------------------</h2>
         <h2>Properties Owned:<div id="p2Props">
 
         </div></h2>

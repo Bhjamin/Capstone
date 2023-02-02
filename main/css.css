@@ -19,7 +19,7 @@ main {
     height: 66vh;
     width: 100%;
     background-color: rgb(0, 129, 167);
-    
+    text-align: center;
 }
 
 footer {
@@ -44,16 +44,6 @@ h2 {
     margin: 0 auto;
 }
 
-#Arr1 {
-    top: 150px;
-    right: 1250px;
-}
-
-#Arr2 {
-    top: 440px;
-    left: 20px;
-    
-}
 
 #p1Top {
     display: flex;
@@ -156,6 +146,10 @@ h2 {
     width: 7vw;
     height: 10vh;
     border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #topDiv {
@@ -194,10 +188,7 @@ h2 {
 }
 
 p {
-    margin: 0;
     display: inline;
-    position: relative;
-    left: 210px;
     font-size: 20px;
 }
 
@@ -219,5 +210,113 @@ p {
     border-color: white;
 }
 
+img {
+    
+    width: 6vh;
+    
+}
 
 
+@media all and (max-width: 1800px) {
+    #rightMid {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 75px;
+        width: 50%;
+        
+    }
+    
+    #leftMid {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 50%;
+        margin-left: 75px;}
+    }
+    
+    @media all and (max-width: 1600px) {
+        #rightMid {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 60px;
+            width: 50%;
+            
+        }
+        
+        #leftMid {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 50%;
+            margin-left: 60px;}
+    }
+
+    @media all and (max-width: 1400px) {
+        #rightMid {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-right: 44px;
+            width: 50%;
+            
+        }
+        
+        #leftMid {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 50%;
+            margin-left: 44px;}
+
+        h2 {
+            font-size: 15px;
+        }
+    }
+    
+    
+#dieDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dieResultDiv {
+    display: flex;
+}
+
+input {
+    margin: 5px;
+}
+
+.card {
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 15vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#p1 {
+    width: 1.5vw;
+    height: 3vh;
+    background-color: rgb(60, 21, 59);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+#p2 {
+    width: 1.5vw;
+    height: 3vh;
+    background-color: rgb(27, 231, 255);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
