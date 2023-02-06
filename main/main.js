@@ -1025,6 +1025,7 @@ const switchTurn = () => {
     if(p1Turn === true){
         if(p1Cash > 1999){
             turnText.innerText = 'Player 1 won the game!'
+            dieResult.style.display='none'
             die.style.display='none'
             dieBtn.style.display='none'
             actionText.style.display='none'
@@ -1045,6 +1046,7 @@ const switchTurn = () => {
     } else {
         if(p2Cash > 1999){
             turnText.innerText = 'Player 2 won the game!'
+            dieResult.style.display='none'
             die.style.display='none'
             dieBtn.style.display='none'
             actionText.style.display='none'
@@ -1068,7 +1070,7 @@ const switchTurn = () => {
 
 const addHistory = (text) => {
 
-let action = document.createElement('h3')
+    let action = document.createElement('h3')
 action.innerText = `${text}`
 historyDiv.appendChild(action)
 setTimeout(() => {

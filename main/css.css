@@ -44,6 +44,7 @@ footer {
 
 h3 {
     margin: 5px;
+    color: white;
 }
 
 h1 {
@@ -219,6 +220,7 @@ p {
     font-size: 12px;
     max-width: 250px;
     text-align: center;
+    color: rgb(255, 186, 8);
 }
 
 #history {
@@ -353,4 +355,9 @@ input {
 
 .empty {
     background-color: rgb(27, 115, 141);
+}
+
+.gain {
+    color: green;
+    text-shadow: 2px 2px black;
 }
