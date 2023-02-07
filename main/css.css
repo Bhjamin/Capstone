@@ -221,6 +221,7 @@ p {
     max-width: 250px;
     text-align: center;
     color: rgb(255, 186, 8);
+    text-shadow: 2px 2px black;
 }
 
 #history {
@@ -357,7 +358,3 @@ input {
     background-color: rgb(27, 115, 141);
 }
 
-.gain {
-    color: green;
-    text-shadow: 2px 2px black;
-}

@@ -7,8 +7,10 @@ const p1CardDiv = document.getElementById('p1Cards')
 const p2CardDiv = document.getElementById('p2Cards')
 const p1Props = document.getElementById('p1Props')
 const p2Props = document.getElementById('p2Props')
+
 const p1H2 = document.getElementById('p1H2')
     p1H2.style.display='none'
+
 const p2H2 = document.getElementById('p2H2')
     p2H2.style.display='none'
 
@@ -54,8 +56,18 @@ let p1Turn = false
 let p2Turn = false
 let p1Cash = 400
 let p2Cash = 400
+
+
+
+
+
 let p1Position = 1
 let p2Position = 1
+
+
+
+
+
 let p1Properties = []
 let p2Properties = []
 let WWowned = 0
@@ -798,7 +810,7 @@ const p2Move = (num) => {
 
 
 const randEvent = () => {
-    dieResult.style.display='none'
+    dieResult.style.display='inline'
     axios.get('http://localhost:4321/api/randEvent')
     .then(res => {
         console.log(res.data)
@@ -1070,7 +1082,7 @@ const switchTurn = () => {
 
 const addHistory = (text) => {
 
-    let action = document.createElement('h3')
+let action = document.createElement('h3')
 action.innerText = `${text}`
 historyDiv.appendChild(action)
 setTimeout(() => {
