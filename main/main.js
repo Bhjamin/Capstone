@@ -58,14 +58,14 @@ let p1Cash = 400
 let p2Cash = 400
 
 
+let p1Name = ''
+let p2Name = ''
 
-
+let randomEvents = ['G3', 'G1', 'S50', 'S2', 'L50', 'L1']
+let event = randomEvents[Math.floor(Math.random() * 6)]
 
 let p1Position = 1
 let p2Position = 1
-
-
-
 
 
 let p1Properties = []
@@ -85,15 +85,15 @@ const startGame = () => {
 }
 
 const submitNames = () => {
-    axios.post('http://localhost:4321/api/submitNames', {name1: p1NameInput.value, name2: p2NameInput.value})
-    .then(res => {
-        console.log(res.data)
+
+        p1Name = p1NameInput.value
+        p2Name = p2NameInput.value
         let player1Card = document.createElement('div')
         player1Card.classList.add('card')
-        player1Card.innerHTML = `<h2>Player 1: ${res.data.name1}</h2>`
+        player1Card.innerHTML = `<h2>Player 1: ${p1Name}</h2>`
         let player2Card = document.createElement('div')
         player2Card.classList.add('card')
-        player2Card.innerHTML = `<h2>Player 2: ${res.data.name2}</h2>`
+        player2Card.innerHTML = `<h2>Player 2: ${p2Name}</h2>`
         p1Top.appendChild(player1Card)
         p2Top.appendChild(player2Card)
         p1Money.style.display='inline'
@@ -102,7 +102,7 @@ const submitNames = () => {
         p1NameInput.style.display='none'
         p2NameInput.style.display='none'
         nameSubmitBtn.style.display='none'
-        turnText.innerText = `It is ${res.data.name1}s turn!`
+        turnText.innerText = `It is ${p1Name}s turn!`
         p1Turn = true
         p1H2.style.display='inline'
         p2H2.style.display='inline'
@@ -112,7 +112,6 @@ const submitNames = () => {
         p2Icon.style.display='inline'
         p1Money.innerText = `Money: $${p1Cash}`
         p2Money.innerText = `Money: $${p2Cash}`
-    })
 }
 
 const rollDie = () => {
@@ -811,10 +810,9 @@ const p2Move = (num) => {
 
 const randEvent = () => {
     dieResult.style.display='inline'
-    axios.get('http://localhost:4321/api/randEvent')
-    .then(res => {
-        console.log(res.data)
-        if(res.data === 'G3'){
+        let randomEvents = ['G3', 'G1', 'S50', 'S2', 'L50', 'L1']
+        let event = randomEvents[Math.floor(Math.random() * 6)]
+        if(event === 'G3'){
             if(p1Turn === true){
                 p1Cash += 300
                 p1Money.innerText = `Money: $${p1Cash}`
@@ -829,7 +827,7 @@ const randEvent = () => {
                     }, 1500)
             }
         }
-        if(res.data === 'G1'){
+        if(event === 'G1'){
             if(p1Turn === true){
                 p1Cash += 100
                 p1Money.innerText = `Money: $${p1Cash}`
@@ -844,7 +842,7 @@ const randEvent = () => {
                     }, 1500)
             }
         }
-        if(res.data === 'S50'){
+        if(event === 'S50'){
             if(p1Turn === true){
                 p1Cash += 50
                 p2Cash -= 50
@@ -863,7 +861,7 @@ const randEvent = () => {
                     }, 1500)
             }
         }
-        if(res.data === 'S2'){
+        if(event === 'S2'){
             if(p1Turn === true){
                 p1Cash += 200
                 p2Cash -= 200
@@ -882,7 +880,7 @@ const randEvent = () => {
                     }, 1500)
             }
         }
-        if(res.data === 'L50'){
+        if(event === 'L50'){
             if(p1Turn === true){
             p1Cash -= 50
             p1Money.innerText = `Money: $${p1Cash}`
@@ -897,7 +895,7 @@ const randEvent = () => {
                 }, 1500)
             }
         }
-        if(res.data === 'L1'){
+        if(event === 'L1'){
             if(p1Turn === true){
             p1Cash -= 100
             p1Money.innerText = `Money: $${p1Cash}`
@@ -912,9 +910,6 @@ const randEvent = () => {
                 }, 1500)
             }
         }
-        
-        
-    })
 }
 
 const buyProp = () => {
@@ -1043,17 +1038,15 @@ const switchTurn = () => {
             actionText.style.display='none'
         }
         if(p1Cash < 2000){
-            axios.get('http://localhost:4321/api/getP2Name')
-            .then(res => {
                 p1Turn = false
                 p2Turn = true
-                turnText.innerText = `It is ${res.data}s turn!`
+                turnText.innerText = `It is ${p2Name}s turn!`
                 yesBtn.style.display='none'
                 noBtn.style.display='none'
                 die.style.display='inline'
                 dieBtn.style.display='inline'
                 actionText.style.display='none'
-            })
+            
         }
     } else {
         if(p2Cash > 1999){
@@ -1064,17 +1057,16 @@ const switchTurn = () => {
             actionText.style.display='none'
         }
         if(p2Cash < 2000){
-            axios.get('http://localhost:4321/api/getP1Name')
-            .then(res => {
+            
                 p2Turn = false
                 p1Turn = true
-                turnText.innerText = `It is ${res.data}s turn!`
+                turnText.innerText = `It is ${p1Name}s turn!`
                 yesBtn.style.display='none'
                 noBtn.style.display='none'
                 dieBtn.style.display='inline'
                 die.style.display='inline'
                 actionText.style.display='none'
-            })
+            
         }
         
     }
